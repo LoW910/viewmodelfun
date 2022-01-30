@@ -33,5 +33,25 @@ namespace ViewModelFun.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet("names")]
+        public IActionResult Names(){
+            List<User> people = new List<User>{
+                new User("jeb", "rose"),
+                new User("Ian", "french"),
+                new User("billy", "turtle"),
+                new User("jayden", "lion"),
+                new User("cari", "longhair")
+            };
+            return View(people);
+
+        }
+
+        [HttpGet("")]
+        public IActionResult NewMessage(){
+            
+            string newMessage = "this is a message passed from the controler through the model into the viewmodel";
+            return View("index",newMessage);
+        }
     }
 }

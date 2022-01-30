@@ -1,0 +1,9 @@
+@model List<User>
+@{
+    List<User> people = Model;
+}
+<h2>Here are some names!</h2>
+@foreach (var person in people)
+{
+    <p>@person.FirstName , @person.LastName</p>
+}

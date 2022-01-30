@@ -1,0 +1,10 @@
+@model User
+@{
+    User person = Model;
+}
+
+<div>
+    <header>This is a single user!</header>
+    <h1>@person.FirstName</h1>
+    <h2>@person.LastName</h2>
+</div>
